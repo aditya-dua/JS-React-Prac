@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Session 3</title>
+    </head>
+    
+    <body>
+        Strings
+        <div id="demo"></div>
+    </body>
+    
+    <script>
+        let name = "Aditya";
+        let name1 = "Aditya";
+        console.log(name.length)
+        let n=new String("Aditya")
+    
+        console.log("==" + (name == n));
+        console.log("===" + (name === n));
+
+        let n1=new String("Aditya")
+        let n2=new String("Aditya")
+
+        console.log("==" + (n1 == n2));
+        console.log("===" + (n1 === n2));
+
+        document.getElementById("demo").innerHTML="Hello World";
+
+        document.getElementById("demo").onclick = function(){ // Event listener
+            alert("Demo Div Clicked")
+        }
+
+        
+        let newDiv = document.createElement("div");
+        
+        document.body.insertBefore(document.getElementById("demo"),newDiv)
+        
+        console.log(document.getElementsByTagName("div"));
+    </script>
+</html>

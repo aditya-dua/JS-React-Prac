@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Session 3</title>
+    </head>
+    
+    <body>
+        JSON
+    </body>
+    
+    <script>
+        let student = {
+            name:"David John",
+            age:30,
+            course:["Javascript Basics", "React", "NodeJS"],
+            email:"david.developer@gmail.com"
+        }
+        
+        console.log(JSON.stringify(student))
+        localStorage.setItem("student",JSON.stringify(student))
+
+        console.log(localStorage.getItem("student"))
+        
+    </script>
+</html>
