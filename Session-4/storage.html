@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Session 4 Storage</title>
+    </head>
+    <body>
+        Storage
+        <button onclick="counter()" >Click</button>
+        <div id="counterId"></div>
+        <div id="div1"></div>
+    </body>
+    <script>
+
+        localStorage.setItem("firstName","Aditya");
+        localStorage.setItem("lastName","Dua");
+        document.getElementById("div1").innerHTML= localStorage.getItem("lastName")
+        
+        function counter(){
+            if(typeof(Storage) !== "undefined"){
+                if(sessionStorage.clickCount){
+                    sessionStorage.clickCount = Number(sessionStorage.clickCount)+1;
+                }else{
+                    sessionStorage.clickCount = 1;
+                }
+
+                document.getElementById("counterId").innerHTML= "You have clicked button "+sessionStorage.clickCount+" times."
+ 
+            }
+        }
+
+    
+    </script>    
+</html>

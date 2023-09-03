@@ -6,7 +6,13 @@ Async Javascript
 AJAX
 API's
 
-Browser Storage
+Browser Storage:
+Till HTML5, cookies, caches
+HTML5, Web Storage..
+
+LocalStorage: There no limit
+Session Storage: Tab is closed
+
 
 Javascript Modules
 JSON
