@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>Session 4 Promise</title>
+    </head>
+    <body>
+        This is a promise example where we try fetching the file
+        <div id="div1"></div>
+    </body>
+    <script>
+
+        function fileDisplay(value){
+            const newDiv = document.createElement("div");
+            let tableTag = document.createElement("table");
+            console.log(value);
+            
+            let obj = JSON.parse(value);
+           
+            /*let text = "<p> Title: "+obj.title+"</p>"+
+            "<p> Price: "+obj.price+"</p>"+
+            "<p> Desc: "+obj.description+"</p>"+
+            "<p> Rating: "+obj.rating+"</p>"+
+            "<p> Brand: "+obj.brand+"</p>";*/
+            let text="";
+            
+            for(let i =0;i<obj.products.length;i++){
+                let k = "<tr><td>"+obj.products[i].title+"</td>"+
+                    "<td>"+obj.products[i].price+"</td>"+
+                    "<td>"+obj.products[i].description+"</td>"+
+                    "<td>"+obj.products[i].rating+"</td>"+
+                    "<td>"+obj.products[i].brand+"</td></tr>";
+                text = text +k;
+            }
+           
+           
+            newDiv.appendChild(tableTag);
+            document.getElementById("div1").innerHTML = "<table>"+text+"</table>";
+
+        }
+
+        function errorDisplay(value){
+            document.getElementById("div1").innerHTML= value;
+        }
+
+        let filePromise = new Promise(function(resolve,reject){   
+            let req = new XMLHttpRequest();
+            req.open
+            ("GET",
+            "https://dummyjson.com/products"
+            );
+            req.onload = function(){
+                if(req.status == 200){
+                    resolve(req.response);
+                }else{
+                    reject("File Not Found");
+                }
+
+            };
+            req.send();
+        });
+        filePromise.then(
+            function(value) {fileDisplay(value);},
+            function(error) {errorDisplay(error);}
+        );
+        // Some common, calling API call
+    </script>    
+</html>

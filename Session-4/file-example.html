@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Session 4 Promise</title>
+    </head>
+    <body>
+        This is a promise example where we try fetching the file
+        <div id="div1"></div>
+    </body>
+    <script>
+
+        function fileDisplay(value){
+            document.getElementById("div1").innerHTML= value;
+        }
+
+        let filePromise = new Promise(function(resolve,reject){   
+            let req = new XMLHttpRequest();
+            req.open
+            ("GET",
+            "http://help.websiteos.com/websiteos/example_of_a_simple_html_page.htm"
+            );
+            req.onload = function(){
+                alert("On load called")
+                
+                if(req.status == 200){
+                    resolve(req.response);
+                }else{
+                    reject("File Not Found");
+                }
+
+            };
+            req.send();
+        });
+        filePromise.then(
+            function(value) {fileDisplay(value);},
+            function(error) {fileDisplay(error);}
+        );
+        // Some common, calling API call
+    </script>    
+</html>

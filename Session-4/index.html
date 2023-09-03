@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>Session 4 Callback</title>
+    </head>
+    <body>
+        Call back Example
+        <div id="div1"></div>
+    </body>
+    <script>
+
+        // This function is to be called after 3 seconds
+        setTimeout(testFunc,3000);
+        
+        // You call an API, if API in 30 seconds, otherwise timeout error
+
+        function testFunc(){
+            document.getElementById("div1").innerHTML="Div 1 Text"
+        }
+    </script>    
+</html>

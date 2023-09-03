@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>Session 4 Promise</title>
+    </head>
+    <body>
+        This is a promise
+        <div id="div1"></div>
+    </body>
+    <script>
+
+        function testMessage(value){
+            document.getElementById("div1").innerHTML= value;
+        }
+
+        let p = new Promise(function(resolve,reject){
+            let status = 501;// Assumption
+
+            if(status==200){// Test....API responds with status code as 200
+                resolve("OK");
+            }else{
+                reject("Error")
+            }
+
+        });
+
+
+        p.then(
+            function(value) {testMessage(value);},
+            function(error) {testMessage(error);}
+        );
+        // Some common, calling API call
+
+    </script>    
+</html>
