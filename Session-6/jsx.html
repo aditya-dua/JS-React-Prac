@@ -8,7 +8,7 @@
 
     <body>
         
-
+        anything which is inside a {} will be calculated and then displayed and this is known as expression.
         <div id="jsx">
             
 
@@ -16,10 +16,11 @@
 
        
         <script type ="text/babel">
-            function Greeting(){
-                return <h1>Hello World Using JSX</h1>
+            var num=2;
+            function Greeting(props){
+                return <h1>Hello {props.name} {props.email} Using JSX {num+num}</h1>
             }
-            ReactDOM.render(<Greeting/>,document.getElementById("jsx"))
+            ReactDOM.render(<Greeting name="Aditya" email="aditya@aditya.com"/>,document.getElementById("jsx"))
 
         </script>
     </body>
