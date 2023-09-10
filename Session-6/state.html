@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>React Class Component</title>
+        <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+
+    <body>
+        
+        <div id="class">
+            
+
+        </div>
+
+       
+        <script type ="text/babel">
+            
+            class Greeting extends React.Component{
+
+                constructor(){
+                    super();
+                    this.state= {name:"Aditya"}
+                    
+                }
+
+                
+                render(){
+                    return <h1>Hello {this.state.name}</h1>
+                }
+            }
+
+
+            ReactDOM.render(<Greeting/>,document.getElementById("class"))
+
+        </script>
+    </body>
+</html>
