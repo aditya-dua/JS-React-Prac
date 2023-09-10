@@ -7,28 +7,19 @@
     </head>
 
     <body>
-        <div id="app">
-            
-
-        </div>
+        
 
         <div id="jsx">
             
 
         </div>
 
-        <script>
-            function Greeting(){
-                return React.createElement("h1",{},"Hello World")
-            }
-            ReactDOM.render(Greeting(),document.getElementById("app"))
-
-        </script>
-        <script>
+       
+        <script type ="text/babel">
             function Greeting(){
                 return <h1>Hello World Using JSX</h1>
             }
-            ReactDOM.render(Greeting(),document.getElementById("jsx"))
+            ReactDOM.render(<Greeting/>,document.getElementById("jsx"))
 
         </script>
     </body>
