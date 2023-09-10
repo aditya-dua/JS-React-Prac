@@ -9,7 +9,7 @@
     <body>
         Each Component has a lifecycle, this monitor and manipulate the Component.
         Phase: 1. Mounting, Updating, Unmounting
-        Mounting:
+            Mounting:
             1. constructor()
             2. getDerivedStateFromProps()
             3. render() Required
@@ -26,6 +26,13 @@
             3. render
             4. getSnapshotBeforeUpdate()
             5. componentDidUpdate
+
+            Third Stage: Unmounting
+            1. componentWillUnmount()
+            
+            but sir inside React.render() you are calling a class 
+            and lets say class has n number of functions 
+            but I want to call a specific function how can i do that?
 
 
         <div id="class">
@@ -59,6 +66,10 @@
                     console.log("componentDidUpdate")
                 }
                 
+                componentWillUnmount(){
+                    console.log("componentWillUnmount")
+                }
+
                 render(){
                     return <h1>Hello {this.state.name}</h1>
                 }
