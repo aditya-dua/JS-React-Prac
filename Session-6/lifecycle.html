@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <title>React Class Component</title>
+        <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+
+    <body>
+        Each Component has a lifecycle, this monitor and manipulate the Component.
+        Phase: 1. Mounting, Updating, Unmounting
+        Mounting:
+            1. constructor()
+            2. getDerivedStateFromProps()
+            3. render() Required
+            4. componentDidMount()
+
+            constructor=> Called before anything
+            getDerivedStateFromProps => 
+            render => HtML is output to the DOM
+            componentDidMount after mounted
+
+            Second Stage: Updating
+            1. getDerivedStateFromProps
+            2. shouldComponentUpdate()
+            3. render
+            4. getSnapshotBeforeUpdate()
+            5. componentDidUpdate
+
+
+        <div id="class">
+            
+
+        </div>
+
+       
+        <script type ="text/babel">
+            
+            class Greeting extends React.Component{
+
+                constructor(props){
+                    super(props);
+                    this.state= {name:"Aditya"}
+                    
+                }
+
+                componentDidMount(){
+                    setTimeout(()=>{
+                        this.setState({name:"Intellipaat"})
+                    },1000)
+                }
+
+                shouldComponentUpdate(){
+                    console.log("shouldComponentUpdate")
+                    return true;
+                }
+
+                componentDidUpdate(){
+                    console.log("componentDidUpdate")
+                }
+                
+                render(){
+                    return <h1>Hello {this.state.name}</h1>
+                }
+            }
+
+
+            ReactDOM.render(<Greeting/>,document.getElementById("class"))
+
+        </script>
+    </body>
+</html>
