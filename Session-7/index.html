@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>React Component</title>
+        <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+
+    <body>
+        <div id="app">
+            
+
+        </div>
+
+        <div id="jsx">
+            
+
+        </div>
+
+        <script type="text/babel">
+            class App extends React.Component{
+                constructor(props){
+                    super(props);
+                    this.state={message: "Hello World!"};
+                    this.handleClick= this.handleClick.bind(this);
+                }
+
+                handleClick(e){
+                    console.log(this.state.message)
+                    console.log(e)
+                }
+
+                render(){
+                    return <h1 onClick={this.handleClick}>{this.state.message}</h1>
+                }
+            }
+
+            ReactDOM.render(<App/>,document.getElementById("app"))
+        </script>
+    </body>
+</html>
