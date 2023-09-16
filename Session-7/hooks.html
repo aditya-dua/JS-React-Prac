@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>React Component</title>
+        <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+
+    <body>
+        
+        Hooks:
+        const [message,setMessage] = React.useState
+        1. By defining it as useState, we say that it would use the state Hook
+        2. The value you pass in the useState would be the initilization
+        3. Any updates have to be done using the set method
+        <div id="jsx">
+            
+
+        </div>
+
+       
+        <script type ="text/babel">
+           
+            function Greeting(props){
+                const [message,setMessage] = React.useState("Hello World!")
+               
+                return(
+                    <div>
+                        <h1>{message}</h1>
+                        <button type="button" onClick={()=> setMessage("Aditya")}>Click Me to change message</button>
+                    </div>
+                ) 
+            }
+
+            ReactDOM.render(<Greeting/>,document.getElementById("jsx"))
+
+        </script>
+    </body>
+</html>
