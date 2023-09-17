@@ -7,11 +7,15 @@ function Timer() {
   const [count,setCount] = useState(0);
 
   useEffect(()=>{
-    setTimeout(()=>{
+    let timer = setTimeout(()=>{
       console.log("Use Effect")
       setCount((count)=> count+1);
     },1000)
-  })
+
+    return () => clearTimeout(timer)
+  },[])
+
+  
 
   return (
     <div className="App">
