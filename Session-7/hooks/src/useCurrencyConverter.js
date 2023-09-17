@@ -7,7 +7,7 @@ const useCurrencyConverter = (obj) =>{
         
         setCurrency(obj.price*83.09);
 
-      });
+    });
 
       return [currency];
 }
