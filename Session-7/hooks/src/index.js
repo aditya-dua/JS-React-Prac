@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import FetchExample from './FetchExample';
+import FetchHooks from './FetchHooks';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <FetchExample />
+    <FetchHooks />
   </React.StrictMode>
 );
 

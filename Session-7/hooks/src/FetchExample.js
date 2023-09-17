@@ -6,8 +6,7 @@ function FetchExample() {
 
   const [data,setData] = useState(null);
 
-  useEffect(()=>{
-    
+  useEffect(()=>{  
     fetch("https://jsonplaceholder.typicode.com/todos")
       .then((res) => res.json())
       .then((data)=> setData(data));
@@ -17,7 +16,7 @@ function FetchExample() {
 
   return (
     <div>
-      <h1>My ToDo App</h1>
+      <h1>My ToDo App </h1>
       <table>
       {data && data.map((item)=>{
         return <tr>
