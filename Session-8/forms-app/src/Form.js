@@ -15,6 +15,7 @@ function Form() {
     <div>
       <form onSubmit = {submitClicked}>
         <input type="text" placeholder="Enter Username" value={username} onChange={e=>setUsername(e.target.value) }></input>
+        <br></br>
         <input type="text" placeholder="Enter Password" value={password} onChange={e=>setPassword(e.target.value) }></input>
 
         <input type="submit"></input>
