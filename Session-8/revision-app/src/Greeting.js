@@ -1,11 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react';
+import StateExample from './StateExample';
 
 class Greeting extends React.Component{
 
+  constructor(props){
+
+    super(props);
+    this.state = {date:new Date()}
+  }
+
   render(){
-    return <h1>Greetings from class component</h1>
+    return(
+      <div>
+        <h1>Greetings from class component</h1>
+        <h2>The current time is :{ this.state.date.toLocaleDateString()}</h2>
+        <StateExample></StateExample>
+      </div>
+    ); 
   }
 }
 
