@@ -3,6 +3,8 @@ import './App.css';
 import React from 'react';
 import StateExample from './StateExample';
 import LifecycleComponent from './LifecycleComponent';
+import StudentNew from './StudentNew';
+
 
 class Greeting extends React.Component{
 
@@ -19,6 +21,7 @@ class Greeting extends React.Component{
         <h2>The current time is :{ this.state.date.toLocaleDateString()}</h2>
         <StateExample></StateExample>
         <LifecycleComponent></LifecycleComponent>
+        <StudentNew></StudentNew>
       </div>
     ); 
   }
