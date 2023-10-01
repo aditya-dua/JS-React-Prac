@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import {BrowserRouter as Router, Link,Routes,Route} from "react-router-dom"
+import {BrowserRouter as Router, Link,Routes,Route, NavLink} from "react-router-dom"
 import Student from './Student';
 
 function App() {
@@ -8,7 +8,9 @@ function App() {
     <Router>
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <NavLink to="/" style={({ isActive }) => ({ 
+                            color: isActive ? 'black' : 'red' })}>Home
+          </NavLink>
         </li>
         <li>
           <Link to="/services">Services</Link>
