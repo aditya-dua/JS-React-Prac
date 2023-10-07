@@ -9,16 +9,32 @@
     <script>
         function countReducer(state=0,action){
             switch(action.type){
-                case 'INCREMENT': return state+1;
+                case 'INCREMENT': console.log("Payload: " +action.payload);
+                return state+1;
                 case 'DECREMENT': return state-1;
                 default: return state; 
             }
         }
 
+        function updateProfileReducer(state= {name:"Aditya",age:30},action){
+            switch(action.type){
+                case 'ADDCOURSE': state.course="React with Redux";
+                console.log("state:"+state)
+                return state;
+                case 'DECREMENT': return state-1;
+                default: return state; 
+            }
+        }
+
+        const profileStore = Redux.createStore(updateProfileReducer);
+
         const store = Redux.createStore(countReducer);
 
         store.subscribe(()=> console.log(store.getState()));
 
+        profileStore.subscribe(()=> console.log(profileStore.getState()));
+
+        profileStore.dispatch({type:"ADDCOURSE"})
         store.dispatch({type:'INCREMENT'});
         store.dispatch({type:'DECREMENT'});
         store.dispatch({type:'INCREMENT'});
