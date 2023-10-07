@@ -12,8 +12,12 @@ export default class Cart{
         this.items=this.items.filter(i=>i.id !=item.id);
     }
 
+    save(){
+        this.database.save();
+    }
+    
     totalPrice(){
-        this.items.map(i=> i.price).reduce((prev,next)=> prev+next,0);
+        return this.items.map(i=> i.price).reduce((prev,next)=> prev+next,0);
     }
 
     getItems(){
