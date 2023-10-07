@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Redux</title>
+    </head>
+
+    <body>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.1/redux.js"></script>
+    </body>
+    <script>
+        function countReducer(state=0,action){
+            switch(action.type){
+                case 'INCREMENT': return state+1;
+                case 'DECREMENT': return state-1;
+                default: return state; 
+            }
+        }
+
+        const store = Redux.createStore(countReducer);
+
+        store.subscribe(()=> console.log(store.getState()));
+
+        store.dispatch({type:'INCREMENT'});
+        store.dispatch({type:'DECREMENT'});
+        store.dispatch({type:'INCREMENT'});
+
+        
+    </script>
+</html>
